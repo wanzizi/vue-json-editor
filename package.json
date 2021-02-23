@@ -1,5 +1,5 @@
 {
-  "name": "vue-json-editor",
+  "name": "simple-vue-json-editor",
   "version": "0.1.0",
   "private": false,
   "description": "vue编写的json editor",

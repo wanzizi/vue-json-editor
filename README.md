@@ -1,10 +1,10 @@
-# vue-json-editor
+# simple-vue-json-editor
 
 ## 使用组件
 ```
-npm install vue-json-editor -S
+npm install simple-vue-json-editor -S
 
-import vueJsonEditor from 'vue-json-editor'
+import vueJsonEditor from 'simple-vue-json-editor'
 
 <editors :sourceObj="obj"></editors>
 ```
