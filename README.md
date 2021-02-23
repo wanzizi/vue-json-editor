@@ -6,7 +6,9 @@ npm install simple-vue-json-editor -S
 
 import vueJsonEditor from 'simple-vue-json-editor'
 
-<editors :sourceObj="obj"></editors>
+import 'simple-vue-json-editor/lib/vue-json-editor.css'
+
+<vue-json-editor :sourceObj="obj"></vue-json-editor>
 ```
 
 ## 参数配置
