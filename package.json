@@ -1,7 +1,7 @@
 {
   "name": "vue-json-editor",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "description": "vue编写的json editor",
   "main": "lib/vue-json-editor.umd.min.js",
   "scripts": {
