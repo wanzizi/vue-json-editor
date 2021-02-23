@@ -20,6 +20,10 @@ import vueJsonEditor from 'vue-json-editor'
 | canToggle    | 是否需要展开收起的功能，为false时，收缩icon会隐藏   | Boolean    |  true   |
 
 
+## 使用效果
+
+![效果图](https://cdn.wanwudezhi.com/static/web-static/image/7693ee5c9b6139c1534b54ca1151bcf4/6BA66032-A8C2-4B40-BCB0-792BE66F0CC5.png "效果图")
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
