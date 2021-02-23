@@ -250,7 +250,7 @@ export default {
       if (this.node.type === 'array') {
         item.key = length
       } else {
-        item.key = ''
+        item.key = ' '
       }
       item.isNew = true
       // item.index = length
@@ -264,15 +264,17 @@ export default {
       this.isOpen = !this.isOpen
     },
     handleKeyChange (index, val) {
-      this.$set(this.node.children[index], 'key', val)
-      // this.watchObjChange()
+      if (this.node.children[index].key !== val) {
+        this.$set(this.node.children[index], 'key', val)
+        this.watchObjChange()
+      }
     },
     handleValueChange (index, val) {
-      // 新节点失焦有问题
       // TODO: 初始化有值就不会在失焦的重复内容，不知道什么原理，待细查
-      // console.log('handleValueChange', val, this.node.children, index)
-      this.$set(this.node.children[index], 'value', val)
-      // this.watchObjChange()
+      if (this.node.children[index].value !== val) {
+        this.$set(this.node.children[index], 'value', val)
+        this.watchObjChange()
+      }
     }
   }
 }
@@ -344,6 +346,7 @@ export default {
       outline: none;
     }
     &.key{
+      display: inline-block;
       flex: 1;
       white-space: nowrap;
     }

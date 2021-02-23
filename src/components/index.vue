@@ -26,7 +26,7 @@ import jsonNode from './jsonNode.vue'
 import _ from 'lodash'
 import 'element-ui/lib/theme-chalk/index.css'
 export default {
-  name: 'jsonEditor',
+  name: 'vueJsonEditor',
   provide () {
     return {
       watchObjChange: this.watchObjChange,
@@ -116,11 +116,12 @@ export default {
       if (this.innerObj.type === 'array') {
         item.key = length
       } else {
-        item.key = ''
+        item.key = ' '
       }
       item.isNew = true
       // item.index = length
       this.innerObj.children.splice((index + 1), 0, item)
+      this.$set(this.innerObj.children, index + 1, item)
       this.watchObjChange()
     },
     renderObj (data) {
@@ -155,12 +156,16 @@ export default {
       }
     },
     handleKeyChange (index, val) {
-      this.$set(this.innerObj.children[index], 'key', val)
-      this.watchObjChange()
+      if (this.innerObj.children[index].key !== val) {
+        this.$set(this.innerObj.children[index], 'key', val)
+        this.watchObjChange()
+      }
     },
     handleValueChange (index, val) {
-      this.$set(this.innerObj.children[index], 'value', val)
-      this.watchObjChange()
+      if (this.innerObj.children[index].value !== val) {
+        this.$set(this.innerObj.children[index], 'value', val)
+        this.watchObjChange()
+      }
     },
     watchObjChange () {
       if (!this.needTransfer) {
@@ -200,7 +205,7 @@ export default {
       return val
     },
     emitData (data) {
-      console.log('datadatadata', data)
+      console.log('data change and save', data)
       this.$emit('on-change', data)
     }
   }
